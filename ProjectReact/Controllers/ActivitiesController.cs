@@ -24,7 +24,9 @@ namespace ProjectReact.Controllers
 		[HttpGet("{id}")]//api/activities/fds23423
 		public async Task<ActionResult<Activity>> GetActivity(Guid id)
 		{
-			return await _dataContext.Activities.FirstOrDefaultAsync(a => a.Id == id);
+			//return await _dataContext.Activities.FirstOrDefaultAsync(a => a.Id == id);
+
+			return await _dataContext.Activities.FindAsync(id);
 		}
 
 	}
